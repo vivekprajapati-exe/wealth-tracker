@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/header";
+import { AuthCheck } from "@/components/AuthCheck";
+import { AuthTest } from "@/components/AuthTest";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +18,8 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className} bg-black text-white`} suppressHydrationWarning>
+          <AuthTest />
+          <AuthCheck />
           <Header />
           <main className="min-h-screen">
             {children}
